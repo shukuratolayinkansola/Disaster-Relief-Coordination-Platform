@@ -9,7 +9,8 @@
     skills: (list 5 (string-ascii 20)),
     availability: (string-ascii 50),
     location: (string-ascii 100),
-    status: (string-ascii 20)
+    status: (string-ascii 20),
+    principal: principal
   }
 )
 
@@ -28,7 +29,8 @@
         skills: skills,
         availability: availability,
         location: location,
-        status: "available"
+        status: "available",
+        principal: volunteer
       }
     )
     (var-set next-volunteer-id (+ new-id u1))
@@ -44,7 +46,7 @@
   (let ((volunteer tx-sender))
     (match (map-get? volunteers { volunteer-id: volunteer-id })
       v (begin
-        (asserts! (is-eq volunteer (contract-call? .principal-registry get-principal volunteer-id)) (err u403))
+        (asserts! (is-eq volunteer (get principal v)) (err u403))
         (map-set volunteers
           { volunteer-id: volunteer-id }
           (merge v { status: new-status })
