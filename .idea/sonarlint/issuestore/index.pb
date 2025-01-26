@@ -5,3 +5,5 @@ R
 "contracts/disaster-relief-nft.clar,a/c/ac1a245c5f643094c6407dbfa0d65944f346c83e
 M
 contracts/aid-management.clar,0/0/00a14410c916193310f50df28da93eba974f036f
+S
+#contracts/volunteer-management.clar,3/d/3d72a86142628a3e7cd78167349cb0c7f26764aa
