@@ -1,7 +1,5 @@
 ;; Disaster Relief NFT Contract
 
-(impl-trait .sip009-nft-trait.sip009-nft-trait)
-
 (define-non-fungible-token disaster-relief-nft uint)
 
 (define-data-var last-token-id uint u0)
@@ -36,3 +34,4 @@
 (define-read-only (get-owner (token-id uint))
   (ok (nft-get-owner? disaster-relief-nft token-id))
 )
+
